@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2015 at 04:01 AM
+-- Generation Time: Jun 11, 2015 at 12:05 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -203,19 +203,6 @@ CREATE TABLE IF NOT EXISTS `subjects_tutors` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tutordetails`
---
-
-CREATE TABLE IF NOT EXISTS `tutordetails` (
-`id` int(11) NOT NULL,
-  `tutor_id` int(11) NOT NULL,
-  `major_id` int(11) NOT NULL,
-  `degree_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tutors`
 --
 
@@ -232,6 +219,19 @@ CREATE TABLE IF NOT EXISTS `tutors` (
   `address` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `fee` int(11) DEFAULT NULL,
   `image` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tutors_details`
+--
+
+CREATE TABLE IF NOT EXISTS `tutors_details` (
+`id` int(11) NOT NULL,
+  `tutor_id` int(11) NOT NULL,
+  `major_id` int(11) NOT NULL,
+  `degree_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 --
@@ -329,15 +329,15 @@ ALTER TABLE `subjects_tutors`
  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tutordetails`
---
-ALTER TABLE `tutordetails`
- ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tutors`
 --
 ALTER TABLE `tutors`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tutors_details`
+--
+ALTER TABLE `tutors_details`
  ADD PRIMARY KEY (`id`);
 
 --
@@ -420,14 +420,14 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `subjects_tutors`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `tutordetails`
---
-ALTER TABLE `tutordetails`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `tutors`
 --
 ALTER TABLE `tutors`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tutors_details`
+--
+ALTER TABLE `tutors_details`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
