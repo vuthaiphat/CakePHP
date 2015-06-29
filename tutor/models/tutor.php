@@ -38,7 +38,39 @@ class Tutor extends AppModel {
 			'allowEmpty' => false,
 			'message' => ''
 			),
-		//'sex' 
+		'sex' => array(
+			'rule' => array('boolean'),
+			'require' => true,
+			'allowEmpty' => false,
+			'message' => 'chưa chọn giới tính' 
+			),
+		'phoneNo' => array(
+			'rule' => 'alphaNumeric',
+			'require' => true,
+			'allowEmpty' => false,
+			'message' => 'Nhập số điện thoại'
+			),
+		'identityCard' => array(
+			'rule' => array('numeric', 'isUnique'),
+			'require' => true,
+			'allowEmpty' => false,
+			'message' => 'Nhập số điện thoại'
+			),
+		'address' => array(
+			'rule' => array('minLength', 1),
+			'require' => true,
+			'allowEmpty' => false,
+			'on' => 'create',
+			'message' => 'Nhập địa chỉ'
+			),
+		'fee' => array(
+			'rule' => 'money',
+			'allowEmpty' => true,
+			'message' => 'chỉ nhập số'
+			),
+		'image' => array(
+			'allowEmpty' => true
+			),
 		);
 
 	var $hasMany = array(

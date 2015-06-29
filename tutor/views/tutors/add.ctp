@@ -3,22 +3,24 @@
 	<fieldset>
 		<legend><?php __('Add Tutor'); ?></legend>
 	<?php
-		echo $this->Form->input('email');
+		echo $this->Form->input('email', array('label' => 'email (username)'));
 		echo $this->Form->input('password');
-		echo $this->Form->input('firstName');
-		echo $this->Form->input('lastName');
-		echo $this->Form->input('dateOfBirth');
-		echo $this->Form->input('sex');
-		echo $this->Form->input('phoneNo');
-		echo $this->Form->input('identityCard');
-		echo $this->Form->input('address');
-		echo $this->Form->input('fee');
-		echo $this->Form->input('image');
-		echo $this->Form->input('Day');
+		echo $this->Form->input('password1', array('label' => 'Nhập lại password *','type'=>'password'));
+		echo $this->Form->input('firstName', array('label' => 'Họ Lót'));
+		echo $this->Form->input('lastName', array('label' => 'Tên'));
+		echo $this->Form->input('dateOfBirth', array('label' => 'Ngày Sinh', 'minYear' => '1955', 'maxYear' => '1997'));
+		echo $this->Form->input('sex', array('label' => 'Giới Tính', 'options' => array('Nam', 'Nữ')));
+		//echo $this->Form->input('gioiTinhNam', array('label' => 'Giới Tính *', 'options' => array('Nam', 'Nữ')));
+		echo $this->Form->input('phoneNo', array('label' => 'Số Điện Thoại'));
+		echo $this->Form->input('identityCard', array('label' => 'Số CMND'));
+		echo $this->Form->input('address', array('label' => 'Địa Chỉ'));
+		echo $this->Form->input('fee', array('label' => 'Học Phí Mong Muốn (Nếu Có)'));
+		echo $this->Form->input('image', array('label' => 'Ảnh Đại Diện (Nếu Có)'));
+		echo $this->Form->input('Day', array('label' => 'Chọn Ngày Có Thể Dạy', 'type' => 'select', 'multiple' => 'checkbox'));
 		echo $this->Form->input('District');
-		echo $this->Form->input('Label');
-		echo $this->Form->input('Request');
-		echo $this->Form->input('Subject');
+		echo $this->Form->input('Label', array('label' => 'Chọn Lớp Có Thể Dạy'));
+		//echo $this->Form->input('Request');
+		echo $this->Form->input('Subject', array('label' => 'Chọn Môn Có Thể Dạy'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
